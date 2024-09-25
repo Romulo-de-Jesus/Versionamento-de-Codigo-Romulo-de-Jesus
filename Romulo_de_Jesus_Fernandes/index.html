@@ -11,14 +11,14 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #0c1314;
         }
 
         .calculadora {
-            border: 1px solid #ccc;
+            border: 1px solid #12ffdf;
             padding: 20px;
             border-radius: 10px;
-            background-color: white;
+            background-color: black;
         }
 
         .calculadora input {
@@ -31,6 +31,8 @@
         }
 
         .calculadora button {
+            background-color: #1e579c;
+        
             width: 50px;
             height: 50px;
             font-size: 1.2em;
@@ -39,19 +41,50 @@
         }
 
         .calculadora button.operacao {
-            background-color: #e67e22;
-            color: white;
+            background-color: #0098db;
+            color: black;
         }
 
         .calculadora button.equals {
-            background-color: #2ecc71;
-            color: white;
+            background-color: #0ce6f2;
+            color: black;
         }
 
         .calculadora button.clear {
-            background-color: #e74c3c;
-            color: white;
+            background-color: #0ce6f2;
+            color: black;
         }
+
+            /* Estilo de botão para operação */
+    .calculadora button.operacao {
+        background-color: #0098db;
+        color: black;
+    }
+
+    .calculadora button.operacao:hover {
+        background-color: #007bb8; /* Nova cor ao passar o mouse */
+    }
+
+    /* Estilo para botão de igual */
+    .calculadora button.equals {
+        background-color: #0ce6f2;
+        color: black;
+    }
+
+    .calculadora button.equals:hover {
+        background-color: #00bcd4; /* Nova cor ao passar o mouse */
+    }
+
+    /* Estilo para botão de limpar */
+    .calculadora button.clear {
+        background-color: #0ce6f2;
+        color: black;
+    }
+
+    .calculadora button.clear:hover {
+        background-color: #00bcd4; /* Nova cor ao passar o mouse */
+    }
+
     </style>
 </head>
 <body>
