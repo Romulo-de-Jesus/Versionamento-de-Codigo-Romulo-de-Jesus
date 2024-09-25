@@ -3,81 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Calculadora Moderna</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #1e1e1e; /* Fundo escuro */
+            margin: 0; /* Remove margens padrão */
         }
 
         .calculadora {
-            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: #2c2c2c; /* Fundo da calculadora */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra suave */
             padding: 20px;
-            border-radius: 10px;
-            background-color: white;
+            width: 380px; /* Largura fixa */
         }
 
         .calculadora input {
-            width: 100%;
-            height: 40px;
+            width: 95%;
+            height: 60px;
             text-align: right;
-            margin-bottom: 10px;
-            font-size: 1.5em;
-            padding: 5px;
+            margin-bottom: 20px;
+            font-size: 2em;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #1a1a1a; /* Fundo do display */
+            color: #fff; /* Texto branco */
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra interna */
         }
 
         .calculadora button {
-            width: 50px;
-            height: 50px;
-            font-size: 1.2em;
+            width: 70px; /* Largura dos botões */
+            height: 70px; /* Altura dos botões */
+            font-size: 1.5em;
             margin: 5px;
             cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s; /* Transição suave */
         }
 
+        /* Cores dos botões */
         .calculadora button.operacao {
-            background-color: #e67e22;
+            background-color: #ff8c00; /* Laranja */
             color: white;
         }
 
         .calculadora button.equals {
-            background-color: #2ecc71;
+            background-color: #00bcd4; /* Azul claro */
             color: white;
         }
 
         .calculadora button.clear {
-            background-color: #e74c3c;
+            background-color: #f44336; /* Vermelho */
             color: white;
+        }
+
+        /* Efeitos ao passar o mouse */
+        .calculadora button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+        }
+
+        /* Layout dos botões */
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
+            gap: 10px; /* Espaçamento entre botões */
+            margin-top: 10px; /* Espaço acima dos botões */
         }
     </style>
 </head>
 <body>
     <div class="calculadora">
         <input type="text" id="display" readonly>
-        <br>
-        <button onclick="clearDisplay()" class="clear">C</button>
-        <button onclick="appendToDisplay('7')">7</button>
-        <button onclick="appendToDisplay('8')">8</button>
-        <button onclick="appendToDisplay('9')">9</button>
-        <button onclick="appendToDisplay('+')" class="operacao">+</button>
-        <br>
-        <button onclick="appendToDisplay('4')">4</button>
-        <button onclick="appendToDisplay('5')">5</button>
-        <button onclick="appendToDisplay('6')">6</button>
-        <button onclick="appendToDisplay('-')" class="operacao">-</button>
-        <br>
-        <button onclick="appendToDisplay('1')">1</button>
-        <button onclick="appendToDisplay('2')">2</button>
-        <button onclick="appendToDisplay('3')">3</button>
-        <button onclick="appendToDisplay('*')" class="operacao">*</button>
-        <br>
-        <button onclick="appendToDisplay('0')">0</button>
-        <button onclick="appendToDisplay('.')">.</button>
-        <button onclick="calculate()" class="equals">=</button>
-        <button onclick="appendToDisplay('/')" class="operacao">/</button>
+        <div class="button-container">
+            <button onclick="clearDisplay()" class="clear">C</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('+')" class="operacao">+</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')" class="operacao">-</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('*')" class="operacao">*</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculate()" class="equals">=</button>
+            <button onclick="appendToDisplay('/')" class="operacao">/</button>
+        </div>
     </div>
 
     <script>
