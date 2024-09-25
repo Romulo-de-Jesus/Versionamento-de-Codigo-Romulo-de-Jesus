@@ -12,6 +12,7 @@
             align-items: center;
             height: 100vh;
             background-color: #0c1314;
+            margin: 0; /* Remove margens padrão */
         }
 
         .calculadora {
@@ -19,25 +20,31 @@
             padding: 20px;
             border-radius: 10px;
             background-color: black;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Sombra suave */
         }
 
         .calculadora input {
             width: 100%;
-            height: 40px;
+            height: 50px;
             text-align: right;
             margin-bottom: 10px;
             font-size: 1.5em;
             padding: 5px;
+            border: none; /* Remove bordas */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: #222; /* Fundo escuro */
+            color: #fff; /* Texto branco */
         }
 
         .calculadora button {
-            background-color: #1e579c;
-        
-            width: 50px;
-            height: 50px;
-            font-size: 1.2em;
+            width: 60px; /* Aumenta a largura dos botões */
+            height: 60px; /* Aumenta a altura dos botões */
+            font-size: 1.5em; /* Aumenta o tamanho da fonte */
             margin: 5px;
             cursor: pointer;
+            border: none; /* Remove bordas dos botões */
+            border-radius: 5px; /* Bordas arredondadas para os botões */
+            transition: background-color 0.3s; /* Efeito suave de transição */
         }
 
         .calculadora button.operacao {
@@ -45,72 +52,57 @@
             color: black;
         }
 
-        .calculadora button.equals {
+        .calculadora button.equals, .calculadora button.clear {
             background-color: #0ce6f2;
             color: black;
         }
 
-        .calculadora button.clear {
-            background-color: #0ce6f2;
-            color: black;
+        .calculadora button:hover {
+            opacity: 0.9; /* Efeito de transparência ao passar o mouse */
         }
 
-            /* Estilo de botão para operação */
-    .calculadora button.operacao {
-        background-color: #0098db;
-        color: black;
-    }
+        /* Estilos para as operações */
+        .calculadora button.operacao:hover {
+            background-color: #007bb8; /* Nova cor ao passar o mouse */
+        }
 
-    .calculadora button.operacao:hover {
-        background-color: #007bb8; /* Nova cor ao passar o mouse */
-    }
+        .calculadora button.equals:hover, .calculadora button.clear:hover {
+            background-color: #00bcd4; /* Nova cor ao passar o mouse */
+        }
 
-    /* Estilo para botão de igual */
-    .calculadora button.equals {
-        background-color: #0ce6f2;
-        color: black;
-    }
-
-    .calculadora button.equals:hover {
-        background-color: #00bcd4; /* Nova cor ao passar o mouse */
-    }
-
-    /* Estilo para botão de limpar */
-    .calculadora button.clear {
-        background-color: #0ce6f2;
-        color: black;
-    }
-
-    .calculadora button.clear:hover {
-        background-color: #00bcd4; /* Nova cor ao passar o mouse */
-    }
-
+        /* Layout dos botões */
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Quatro colunas iguais */
+            gap: 10px; /* Espaçamento entre botões */
+        }
     </style>
 </head>
 <body>
     <div class="calculadora">
         <input type="text" id="display" readonly>
-        <br>
-        <button onclick="clearDisplay()" class="clear">C</button>
-        <button onclick="appendToDisplay('7')">7</button>
-        <button onclick="appendToDisplay('8')">8</button>
-        <button onclick="appendToDisplay('9')">9</button>
-        <button onclick="appendToDisplay('+')" class="operacao">+</button>
-        <br>
-        <button onclick="appendToDisplay('4')">4</button>
-        <button onclick="appendToDisplay('5')">5</button>
-        <button onclick="appendToDisplay('6')">6</button>
-        <button onclick="appendToDisplay('-')" class="operacao">-</button>
-        <br>
-        <button onclick="appendToDisplay('1')">1</button>
-        <button onclick="appendToDisplay('2')">2</button>
-        <button onclick="appendToDisplay('3')">3</button>
-        <button onclick="appendToDisplay('*')" class="operacao">*</button>
-        <br>
-        <button onclick="appendToDisplay('0')">0</button>
-        <button onclick="appendToDisplay('.')">.</button>
-        <button onclick="calculate()" class="equals">=</button>
-        <button onclick="appendToDisplay('/')" class="operacao">/</button>
+        <div class="button-container">
+            <button onclick="clearDisplay()" class="clear">C</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('+')" class="operacao">+</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')" class="operacao">-</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('*')" class="operacao">*</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculate()" class="equals">=</button>
+            <button onclick="appendToDisplay('/')" class="operacao">/</button>
+        </div>
     </div>
 
     <script>
